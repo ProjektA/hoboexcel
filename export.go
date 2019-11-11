@@ -66,7 +66,6 @@ func ExportWorksheet(filename string, rows RowFetcher, SharedStrWriter *bufio.Wr
 			newCol.V = strconv.Itoa(*cellsCount)
 			*cellsCount++
 			rr.C = append(rr.C, newCol)
-			fmt.Println(val, html.EscapeString(CleanNonUtfAndControlChar(val)))
 			SharedStrWriter.WriteString(fmt.Sprintf("<si><t>%s</t></si>", html.EscapeString(CleanNonUtfAndControlChar(val))))
 		}
 		rr.Spans = "1:10"
